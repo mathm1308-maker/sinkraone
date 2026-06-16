@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria | Mestre Sandro</title>
+  <meta name="description" content="Galeria de fotos do Mestre Sandro, da academia, dos treinos e da equipe TUFF Team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #050505;
+      --ink: #111;
+      --soft-black: #191919;
+      --white: #fff;
+      --paper: #f5f2ed;
+      --muted: rgba(255, 255, 255, .72);
+      --line: rgba(255, 255, 255, .14);
+      --red: #d20f1a;
+      --red-dark: #a50c14;
+      --shadow: 0 22px 60px rgba(0, 0, 0, .34);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--black);
+      color: var(--white);
+      font-family: "Barlow", Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7, 7, 7, .92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 86px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      padding: 5px;
+      border-radius: 8px;
+      background: var(--white);
+      object-fit: contain;
+    }
+
+    .brand strong,
+    h1,
+    h2,
+    h3 {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: .9;
+    }
+
+    .brand strong span,
+    h1 span,
+    h2 span {
+      color: var(--red);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .back {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      padding: 0 16px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, .9);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: border-color .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .back:hover {
+      border-color: rgba(255, 255, 255, .42);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 94px 0 62px;
+      background:
+        linear-gradient(90deg, rgba(5, 5, 5, .94), rgba(5, 5, 5, .76)),
+        url("../assets/images/hero-site-antigo.png") center / cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-top: 20px;
+      font-size: clamp(76px, 13vw, 158px);
+      line-height: .82;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, .82);
+      font-size: clamp(20px, 2.3vw, 29px);
+      line-height: 1.42;
+    }
+
+    .filters {
+      padding: 24px 0;
+      background: var(--paper);
+      color: var(--black);
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-chip {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      border: 1px solid rgba(0, 0, 0, .14);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .filter-chip.active {
+      border-color: var(--red);
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .gallery-section {
+      padding: 68px 0 82px;
+      background: var(--black);
+    }
+
+    .gallery-section.light {
+      background: var(--paper);
+      color: var(--black);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      font-size: clamp(48px, 7vw, 86px);
+      line-height: .86;
+    }
+
+    .section-head p {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .gallery-section.light .section-head p {
+      color: #565656;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .legend-profiles {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .legend-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #111;
+    }
+
+    .legend-card span {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .legend-card h3 {
+      margin-top: 8px;
+      font-size: clamp(38px, 8vw, 58px);
+      line-height: .86;
+    }
+
+    .legend-card p {
+      color: rgba(255, 255, 255, .76);
+      font-size: 16px;
+    }
+
+    .photo-card {
+      min-height: 340px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: end;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft-black);
+      box-shadow: var(--shadow);
+    }
+
+    .photo-card.tall {
+      min-height: 380px;
+    }
+
+    .photo-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.04) saturate(.9);
+      transition: transform .32s ease, filter .32s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.04);
+      filter: contrast(1.08) saturate(1);
+    }
+
+    .photo-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, .78), rgba(0, 0, 0, .08) 58%);
+    }
+
+    .photo-caption {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .photo-caption span {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .photo-caption h3 {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: .9;
+    }
+
+    .photo-caption p {
+      max-width: 520px;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 15px;
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 26px;
+      background:
+        linear-gradient(135deg, rgba(210, 15, 26, .38), transparent 42%),
+        linear-gradient(315deg, rgba(255, 255, 255, .12), transparent 48%),
+        #141414;
+      color: rgba(255, 255, 255, .52);
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: .86;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .light .photo-card {
+      border-color: rgba(0, 0, 0, .12);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, .16);
+    }
+
+    .cta-band {
+      padding: 58px 0;
+      background: var(--paper);
+      color: var(--black);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .cta-inner h2 {
+      max-width: 720px;
+      font-size: clamp(46px, 7vw, 82px);
+    }
+
+    .btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      border-radius: 8px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      background: var(--black);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (min-width: 821px) {
+      .gallery-grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+      }
+
+      .legend-profiles {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .photo-card {
+        grid-column: span 4;
+      }
+
+      .photo-card.featured {
+        grid-column: span 8;
+        min-height: 440px;
+      }
+
+      .photo-card.tall {
+        min-height: 440px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        min-height: auto;
+        padding: 12px 0;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand small {
+        display: none;
+      }
+
+      .back {
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 64px 0 50px;
+      }
+
+      .section-head,
+      .cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card,
+      .photo-card.featured,
+      .photo-card.tall {
+        grid-column: auto;
+        min-height: 330px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegacao principal">
+      <a class="brand" href="../index.html" aria-label="Mestre Sandro">
+        <img src="../assets/images/tuff-team-logo.png" alt="Tuff Team">
+        <strong>Mestre <span>Sandro</span></strong>
+      </a>
+      <a class="back" href="../index.html#mestre">Voltar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Registros especiais</div>
+        <h1>Galeria <span>Tuff Team</span></h1>
+        <p>Momentos marcantes com nomes historicos das artes marciais e lembrancas das viagens para a Thailandia, berco do Muay Thai.</p>
+      </div>
+    </section>
+
+    <section class="filters" aria-label="Categorias da galeria">
+      <div class="container filter-row">
+        <a class="filter-chip active" href="#lendas">Encontro com lendas</a>
+        <a class="filter-chip" href="#thailandia">Thailandia</a>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="lendas">
+      <div class="container">
+        <div class="section-head">
+          <h2>Encontro com <span>lendas</span></h2>
+          <p>Uma area para reunir fotos do Mestre Sandro ao lado de referencias mundiais das artes marciais.</p>
+        </div>
+
+        <div class="legend-profiles">
+          <article class="legend-card">
+            <div>
+              <span>Muay Thai</span>
+              <h3>Saenchai</h3>
+            </div>
+            <p>Um dos atletas mais tecnicos e criativos da historia do Muay Thai, admirado pela movimentacao, controle e genialidade no ringue.</p>
+          </article>
+
+          <article class="legend-card">
+            <div>
+              <span>K-1 e Muay Thai</span>
+              <h3>Buakaw Banchamek</h3>
+            </div>
+            <p>Icone mundial que levou o Muay Thai para uma audiencia global, famoso por explosao, condicionamento absurdo e chutes devastadores.</p>
+          </article>
+
+          <article class="legend-card">
+            <div>
+              <span>MMA</span>
+              <h3>Wanderlei Silva</h3>
+            </div>
+            <p>Lenda brasileira do MMA, simbolo de intensidade e coragem, marcado por batalhas historicas e por um estilo agressivo que fez escola.</p>
+          </article>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="photo-card featured">
+            <img src="../assets/images/galeria/lendas/encontro-01.jpeg" alt="Mestre Sandro em encontro marcial">
+            <div class="photo-caption">
+              <span>Encontro especial</span>
+              <h3>Registro com atletas</h3>
+              <p>Foto recebida para a area de encontros importantes da trajetoria do Mestre Sandro.</p>
+            </div>
+          </article>
+
+          <article class="photo-card tall">
+            <img src="../assets/images/galeria/lendas/encontro-02.jpeg" alt="Cumprimento em evento de artes marciais">
+            <div class="photo-caption">
+              <span>Muay Thai</span>
+              <h3>Respeito e tradicao</h3>
+              <p>Momento de cumprimento e intercambio dentro da cultura marcial.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/lendas/encontro-03.jpeg" alt="Mestre Sandro com convidado das artes marciais">
+            <div class="photo-caption">
+              <span>Encontro</span>
+              <h3>Historia viva</h3>
+              <p>Registro para preservar momentos com nomes importantes das lutas.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/lendas/encontro-04.jpeg" alt="Mestre Sandro em academia de luta">
+            <div class="photo-caption">
+              <span>Academia</span>
+              <h3>Intercambio tecnico</h3>
+              <p>Vivencias e conexoes construidas atraves do treino.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/lendas/encontro-05.jpeg" alt="Mestre Sandro ao lado de atleta consagrado">
+            <div class="photo-caption">
+              <span>MMA</span>
+              <h3>Referencia brasileira</h3>
+              <p>Registro de encontro ligado a grandes nomes das artes marciais.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section light" id="thailandia">
+      <div class="container">
+        <div class="section-head">
+          <h2>Viagens para <span>Thailandia</span></h2>
+          <p>Fotos dos treinos, templos, academias e experiencias vividas no pais onde o Muay Thai nasceu.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="photo-card featured">
+            <img src="../assets/images/galeria/thailandia/thailandia-01.jpeg" alt="Mestre Sandro em registro na Thailandia">
+            <div class="photo-caption">
+              <span>Viagem</span>
+              <h3>Raiz do Muay Thai</h3>
+              <p>Espaco principal para fotos da viagem, treinos em camps tailandeses e momentos de aprendizado direto na fonte.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/thailandia/thailandia-02.jpeg" alt="Cumprimento tradicional em treino de Muay Thai">
+            <div class="photo-caption">
+              <span>Tradicao</span>
+              <h3>Respeito no tatame</h3>
+              <p>Momentos que conectam treino, cultura e respeito dentro do Muay Thai.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/thailandia/thailandia-03.jpeg" alt="Mestre Sandro em visita na Thailandia">
+            <div class="photo-caption">
+              <span>Cultura</span>
+              <h3>Vivencia local</h3>
+              <p>Registros de viagens, visitas e experiencias que aproximam o treino da cultura tailandesa.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/thailandia/thailandia-04.jpeg" alt="Mestre Sandro com uniforme tradicional">
+            <div class="photo-caption">
+              <span>Thailandia</span>
+              <h3>Imersao marcial</h3>
+              <p>Fotos de cerimonias, treinos e momentos especiais vividos durante a viagem.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/thailandia/thailandia-05.jpeg" alt="Equipe em viagem internacional">
+            <div class="photo-caption">
+              <span>Equipe</span>
+              <h3>Representando a Tuff Team</h3>
+              <p>Registros da equipe em eventos, encontros e compromissos fora do Brasil.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/thailandia/thailandia-06.jpeg" alt="Registro cultural em evento de Muay Thai">
+            <div class="photo-caption">
+              <span>Cultura</span>
+              <h3>Raizes da luta</h3>
+              <p>Imagens que valorizam mestres, rituais e a historia por tras do Muay Thai.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/thailandia/thailandia-07.jpeg" alt="Mestre Sandro em area externa durante viagem">
+            <div class="photo-caption">
+              <span>Viagem</span>
+              <h3>Memorias da estrada</h3>
+              <p>Momentos fora do treino que tambem fazem parte da experiencia na Thailandia.</p>
+            </div>
+          </article>
+
+          <article class="photo-card">
+            <img src="../assets/images/galeria/thailandia/thailandia-08.jpeg" alt="Mestre Sandro em academia tradicional">
+            <div class="photo-caption">
+              <span>Camps</span>
+              <h3>Treino na fonte</h3>
+              <p>Fotos em academias e ambientes de preparacao ligados ao Muay Thai tradicional.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <h2>Venha fazer parte da <span>equipe</span></h2>
+        <a class="btn" href="../contato/index.html">Aula experimental</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Mestre Sandro</strong> / TUFF MUAI THAY BRAZILIAN TEAM</p>
+    </div>
+  </footer>
+</body>
+</html>

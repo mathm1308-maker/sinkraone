@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Mestre | Mestre Sandro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { min-height: 100vh; background: #070707; color: #fff; font-family: "Barlow", Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .page { min-height: 100vh; display: grid; grid-template-rows: auto 1fr; }
+    header { border-bottom: 1px solid rgba(255,255,255,.12); background: #080808; }
+    nav { width: min(1120px, calc(100% - 32px)); min-height: 78px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; text-transform: uppercase; }
+    .brand img { width: 54px; height: 54px; object-fit: contain; border-radius: 8px; background: #fff; padding: 5px; }
+    .brand span { color: #d20f1a; }
+    .back { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px; border: 1px solid rgba(255,255,255,.22); border-radius: 8px; font-size: 13px; font-weight: 900; text-transform: uppercase; }
+    main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 92px 0; }
+    .label { color: #d20f1a; font-size: 13px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin-top: 18px; font-family: "Bebas Neue", Impact, sans-serif; font-size: clamp(70px, 14vw, 150px); font-weight: 400; line-height: .82; text-transform: uppercase; }
+    .intro { max-width: 760px; margin-top: 22px; color: #c8c8c8; font-size: 21px; line-height: 1.55; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 44px; }
+    .card { min-height: 190px; display: flex; flex-direction: column; justify-content: space-between; padding: 22px; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; background: #111; transition: transform .2s ease, border-color .2s ease; }
+    .card:hover { border-color: rgba(210,15,26,.55); transform: translateY(-4px); }
+    .card small { color: #d20f1a; font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .card strong { display: block; margin-top: 30px; font-family: "Bebas Neue", Impact, sans-serif; font-size: 42px; font-weight: 400; line-height: .9; text-transform: uppercase; }
+    .card p { margin-top: 10px; color: #bdbdbd; line-height: 1.45; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border-radius: 8px; background: #d20f1a; color: #fff; font-weight: 900; text-transform: uppercase; }
+    .btn.secondary { background: transparent; border: 1px solid rgba(255,255,255,.24); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav>
+        <a class="brand" href="../index.html"><img src="../assets/images/tuff-team-logo.png" alt="Tuff Team"><strong>Mestre <span>Sandro</span></strong></a>
+        <a class="back" href="../index.html#mestre">Voltar</a>
+      </nav>
+    </header>
+    <main>
+      <div class="label">Pagina interna</div>
+      <h1>O Mestre</h1>
+      <p class="intro">Aqui fica a pagina principal com as informacoes do Mestre Sandro: historia, filosofia, graduacao, equipe e galeria. A estrutura esta leve para depois receber conteudo completo sem pesar o site.</p>
+      <div class="grid">
+        <a class="card" href="historia.html">
+          <div>
+            <small>01</small>
+            <strong>Historia</strong>
+            <p>Trajetoria, formacao e marcos dentro das artes marciais.</p>
+          </div>
+        </a>
+        <a class="card" href="filosofia.html">
+          <div>
+            <small>02</small>
+            <strong>Filosofia</strong>
+            <p>Principios de treino, disciplina, respeito e evolucao.</p>
+          </div>
+        </a>
+        <a class="card" href="graduacao.html">
+          <div>
+            <small>03</small>
+            <strong>Graduacao</strong>
+            <p>Certificados, linhagem e reconhecimentos.</p>
+          </div>
+        </a>
+        <a class="card" href="equipe.html">
+          <div>
+            <small>04</small>
+            <strong>Equipe</strong>
+            <p>Tuff Team, alunos, professores e cultura da academia.</p>
+          </div>
+        </a>
+        <a class="card" href="galeria.html">
+          <div>
+            <small>05</small>
+            <strong>Galeria</strong>
+            <p>Fotos, videos, eventos e momentos importantes.</p>
+          </div>
+        </a>
+      </div>
+      <div class="actions">
+        <a class="btn" href="../index.html#contato">Aula experimental</a>
+        <a class="btn secondary" href="../index.html">Voltar ao site</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

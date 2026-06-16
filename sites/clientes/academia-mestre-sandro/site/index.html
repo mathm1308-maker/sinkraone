@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mestre Sandro | TUFF MUAI THAY BRAZILIAN TEAM</title>
+  <meta name="description" content="Treinos de Muay Thai, Jiu-Jitsu e MMA com o Mestre Sandro. Disciplina, tecnica e evolucao para iniciantes e atletas.">
+  <meta property="og:title" content="Mestre Sandro | TUFF MUAI THAY BRAZILIAN TEAM">
+  <meta property="og:description" content="Arte marcial com tradicao, intensidade e acompanhamento de mestre.">
+  <meta property="og:image" content="assets/images/tuff-team-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #070707;
+      --ink: #141414;
+      --soft-black: #1c1c1c;
+      --white: #ffffff;
+      --paper: #f5f2ed;
+      --muted: #b9b9b9;
+      --line: rgba(255, 255, 255, .14);
+      --line-dark: rgba(0, 0, 0, .12);
+      --red: #d20f1a;
+      --red-dark: #9f0b13;
+      --shadow: 0 22px 60px rgba(0, 0, 0, .28);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: var(--black);
+      color: var(--white);
+      font-family: "Barlow", Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 30;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      background: rgba(7, 7, 7, .82);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 78px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      background: var(--white);
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 8px;
+      padding: 5px;
+    }
+
+    .brand strong {
+      display: block;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: 0;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 21px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-menu {
+      position: relative;
+    }
+
+    .nav-menu summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .nav-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-menu-panel {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 230px;
+      display: grid;
+      gap: 2px;
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 8px;
+      background: rgba(8, 8, 8, .96);
+      box-shadow: var(--shadow);
+      transform: translateX(-50%);
+    }
+
+    .nav-menu-panel a {
+      padding: 14px 16px;
+      border-radius: 6px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .nav-menu-panel a:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 26px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(210, 15, 26, .28);
+    }
+
+    .btn-red:hover {
+      background: var(--red-dark);
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, .34);
+      color: var(--white);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      padding: 150px 0 76px;
+      isolation: isolate;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 100% 32%, rgba(210, 15, 26, .2), transparent 26%),
+        radial-gradient(circle at 0% 66%, rgba(255, 255, 255, .08), transparent 24%),
+        #0b0b0b;
+    }
+
+    .hero-media img,
+    .hero-media video {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      filter: grayscale(0) contrast(1.04) brightness(1.24) saturate(1.12);
+    }
+
+    .hero-media img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-media::before,
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 0;
+      width: clamp(90px, 13vw, 270px);
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(210, 15, 26, .74), rgba(210, 15, 26, .18) 18%, rgba(0, 0, 0, .52) 58%, transparent),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, .12) 0 1px, transparent 1px 14px);
+      opacity: .82;
+    }
+
+    .hero-media::before {
+      left: 0;
+    }
+
+    .hero-media::after {
+      right: 0;
+      transform: scaleX(-1);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, .66) 0%, rgba(0, 0, 0, .3) 45%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(0deg, rgba(0, 0, 0, .48) 0%, rgba(255, 255, 255, .1) 54%, rgba(0, 0, 0, .36) 100%);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 720px;
+      font-size: clamp(82px, 12.8vw, 166px);
+      line-height: .82;
+      text-transform: uppercase;
+    }
+
+    h1 span,
+    h2 span {
+      color: var(--red);
+    }
+
+    .hero-text {
+      max-width: 760px;
+      margin: 22px 0 30px;
+      color: rgba(255, 255, 255, .82);
+      font-size: clamp(26px, 2.5vw, 34px);
+      line-height: 1.42;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 56px;
+      border: 1px solid var(--line);
+      background: var(--line);
+      max-width: 720px;
+    }
+
+    .stat {
+      min-height: 102px;
+      padding: 20px;
+      background: rgba(7, 7, 7, .7);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: .9;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      max-width: 760px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: .86;
+      text-transform: uppercase;
+    }
+
+    .section-title p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 620px;
+    }
+
+    .white-section {
+      background: var(--paper);
+      color: var(--black);
+    }
+
+    .white-section .section-title p {
+      color: #565656;
+    }
+
+    .dark-section {
+      background: #050505;
+      color: var(--white);
+    }
+
+    .dark-section .section-title p {
+      color: var(--muted);
+    }
+
+    .action-section {
+      background: var(--paper);
+      color: var(--black);
+      padding-top: 86px;
+    }
+
+    .action-head {
+      max-width: 720px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .action-head h2 {
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: .88;
+      text-transform: uppercase;
+    }
+
+    .action-head p {
+      max-width: 520px;
+      margin: 14px auto 0;
+      color: #565656;
+      font-size: 16px;
+    }
+
+    .action-grid {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .action-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-radius: 0;
+      background: var(--ink);
+    }
+
+    .action-card img,
+    .action-card video {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.04);
+    }
+
+    .action-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, .72) 0%, rgba(0, 0, 0, .16) 44%, rgba(0, 0, 0, .08) 100%);
+      pointer-events: none;
+    }
+
+    .action-tag,
+    .action-caption,
+    .play-mark {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .action-tag {
+      top: 12px;
+      left: 12px;
+      padding: 5px 10px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .play-mark {
+      top: 50%;
+      left: 50%;
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .84);
+      color: var(--red);
+      font-size: 30px;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, .28);
+      cursor: pointer;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .play-mark:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .action-card.is-playing .play-mark {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .action-caption {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 16px 18px;
+      background: rgba(20, 20, 20, .94);
+      border-top: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .action-caption strong {
+      display: block;
+      color: var(--white);
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .carousel-shell {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .track {
+      display: flex;
+      transition: transform .58s ease;
+    }
+
+    .slide {
+      position: relative;
+      min-width: 100%;
+      height: clamp(360px, 62vw, 660px);
+      overflow: hidden;
+      background: #111;
+    }
+
+    .slide video,
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(.35) contrast(1.06);
+    }
+
+    .slide.logo-slide {
+      display: grid;
+      place-items: center;
+      background: var(--white);
+    }
+
+    .slide.logo-slide img {
+      width: min(72vw, 520px);
+      height: auto;
+      object-fit: contain;
+      filter: none;
+    }
+
+    .slide-caption {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      max-width: 470px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--red);
+      background: rgba(0, 0, 0, .72);
+      backdrop-filter: blur(10px);
+    }
+
+    .slide-caption strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .slide-caption span {
+      display: block;
+      color: rgba(255, 255, 255, .76);
+      font-size: 15px;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255, 255, 255, .34);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, .72);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .disciplines {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .discipline {
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px;
+      border: 1px solid var(--line-dark);
+      border-radius: 8px;
+      background: var(--white);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .dark-section .discipline {
+      border-color: rgba(255, 255, 255, .14);
+      background: #121212;
+    }
+
+    .discipline:hover {
+      border-color: rgba(210, 15, 26, .36);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, .12);
+      transform: translateY(-4px);
+    }
+
+    .dark-section .discipline:hover {
+      box-shadow: 0 18px 42px rgba(210, 15, 26, .16);
+    }
+
+    .discipline .number {
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .discipline h3 {
+      margin: 34px 0 12px;
+      color: var(--black);
+      font-size: 44px;
+      line-height: .88;
+      text-transform: uppercase;
+    }
+
+    .dark-section .discipline h3 {
+      color: var(--white);
+    }
+
+    .discipline p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    .dark-section .discipline p {
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .media-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft-black);
+      box-shadow: var(--shadow);
+    }
+
+    .media-panel video {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      filter: grayscale(.55) contrast(1.1);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .feature strong {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--red);
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .feature h3 {
+      margin-bottom: 4px;
+      font-size: 32px;
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .feature p {
+      color: var(--muted);
+    }
+
+    .schedule-section {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+      color: var(--black);
+      isolation: isolate;
+    }
+
+    .schedule-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(135deg, rgba(201, 155, 36, .24) 0 8%, transparent 8% 100%),
+        linear-gradient(315deg, rgba(201, 155, 36, .20) 0 10%, transparent 10% 100%);
+      opacity: .34;
+    }
+
+    .schedule-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at center top, rgba(0, 0, 0, .05), transparent 45%);
+    }
+
+    .schedule-wrap {
+      width: min(1000px, 100%);
+      margin: 0 auto;
+    }
+
+    .schedule-brand {
+      display: grid;
+      justify-items: center;
+      gap: 18px;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .schedule-brand img {
+      width: min(360px, 76vw);
+      padding: 16px;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 8px;
+    }
+
+    .schedule-brand h2 {
+      color: #8a6410;
+      font-size: clamp(44px, 8vw, 82px);
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .schedule-day {
+      margin-top: 28px;
+    }
+
+    .schedule-day h3 {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 10px 22px;
+      background: linear-gradient(90deg, #c99b24, #f1c85a);
+      color: #050505;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid #c99b24;
+      background: rgba(255, 255, 255, .82);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .12);
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border: 1px solid #c99b24;
+      padding: 10px 14px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .schedule-table th {
+      background: linear-gradient(90deg, #c99b24, #f1c85a);
+      color: #050505;
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .schedule-table td {
+      color: rgba(0, 0, 0, .82);
+      font-size: clamp(20px, 3.2vw, 32px);
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .schedule-modalities {
+      margin-top: 38px;
+      text-align: center;
+    }
+
+    .schedule-modalities h3 {
+      color: #8a6410;
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .modality-icons {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .modality-pill {
+      min-height: 96px;
+      display: grid;
+      place-items: center;
+      padding: 14px;
+      border: 1px solid #c99b24;
+      border-radius: 8px;
+      color: var(--black);
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(24px, 4vw, 36px);
+      line-height: .9;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .schedule-motto {
+      margin-top: 24px;
+      color: #8a6410;
+      font-size: clamp(18px, 3vw, 32px);
+      font-weight: 900;
+      letter-spacing: .28em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .master {
+      display: grid;
+      grid-template-columns: 1fr .86fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .logo-block {
+      min-height: 460px;
+      display: grid;
+      place-items: center;
+      padding: 34px;
+      border: 1px solid var(--line-dark);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .logo-block img {
+      width: min(100%, 510px);
+    }
+
+    .quote {
+      margin-top: 28px;
+      padding-left: 22px;
+      border-left: 4px solid var(--red);
+      color: #424242;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .dark-section .quote {
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .contact-band {
+      background: var(--paper);
+      color: var(--black);
+      padding: 64px 0;
+    }
+
+    .contact-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .contact-inner h2 {
+      max-width: 720px;
+      font-size: clamp(48px, 7vw, 86px);
+      line-height: .84;
+      text-transform: uppercase;
+    }
+
+    .contact-inner p {
+      max-width: 520px;
+      margin-top: 12px;
+      color: #565656;
+      font-size: 18px;
+    }
+
+    .contact-band .btn-light {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      background: var(--black);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .footer-inner strong {
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 920px) {
+      .site-header {
+        position: sticky;
+        background: rgba(7, 7, 7, .96);
+      }
+
+      .nav {
+        width: 100%;
+        min-height: 0;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        padding: 10px 14px 8px;
+      }
+
+      .container {
+        width: 100%;
+        padding-inline: 14px;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 4px 0 2px;
+        font-size: 12px;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links > a,
+      .nav-menu summary {
+        min-height: 34px;
+        display: inline-flex;
+        align-items: center;
+        flex: 0 0 auto;
+        border: 1px solid rgba(255, 255, 255, .14);
+        border-radius: 8px;
+        padding: 0 10px;
+        background: rgba(255, 255, 255, .04);
+        white-space: nowrap;
+      }
+
+      .nav-menu-panel {
+        position: fixed;
+        top: 118px;
+        left: 16px;
+        right: 16px;
+        min-width: 0;
+        transform: none;
+        z-index: 60;
+      }
+
+      .hero {
+        min-height: auto;
+        display: block;
+        padding: 26px 0 52px;
+        background:
+          radial-gradient(circle at 100% 28%, rgba(210, 15, 26, .22), transparent 30%),
+          #050505;
+      }
+
+      .hero-media {
+        position: relative;
+        inset: auto;
+        z-index: 0;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        margin-bottom: 28px;
+        border-top: 1px solid rgba(255, 255, 255, .12);
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+      }
+
+      .hero-media img,
+      .hero-media video {
+        object-fit: contain;
+        object-position: center center;
+      }
+
+      .hero::before {
+        z-index: 0;
+        background:
+          linear-gradient(90deg, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, .22) 58%, rgba(0, 0, 0, .04) 100%),
+          linear-gradient(0deg, rgba(0, 0, 0, .42) 0%, rgba(255, 255, 255, .06) 54%, rgba(0, 0, 0, .28) 100%);
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: clamp(58px, 16vw, 96px);
+      }
+
+      .hero-text {
+        max-width: 100%;
+        font-size: clamp(20px, 5.2vw, 25px);
+        line-height: 1.34;
+      }
+
+      .stats,
+      .modality-icons,
+      .disciplines,
+      .split,
+      .master {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .contact-inner,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .media-panel video {
+        aspect-ratio: 16 / 10;
+      }
+
+      .action-section {
+        padding: 54px 0 62px;
+      }
+
+      .action-head {
+        max-width: none;
+        margin-bottom: 24px;
+        text-align: left;
+      }
+
+      .action-head h2 {
+        font-size: clamp(48px, 14vw, 70px);
+      }
+
+      .action-head p {
+        max-width: none;
+        margin-inline: 0;
+        font-size: 18px;
+        line-height: 1.36;
+      }
+
+      .action-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .action-card {
+        height: clamp(250px, 68vw, 340px);
+        min-height: auto;
+        aspect-ratio: auto;
+        border-radius: 6px;
+      }
+
+      .action-card img,
+      .action-card video {
+        object-fit: contain;
+        background: #050505;
+      }
+
+      .action-tag {
+        top: 8px;
+        left: 8px;
+        padding: 4px 7px;
+        font-size: 8px;
+      }
+
+      .play-mark {
+        width: 50px;
+        height: 50px;
+        font-size: 21px;
+      }
+
+      .action-caption {
+        padding: 8px;
+      }
+
+      .action-caption strong {
+        display: -webkit-box;
+        overflow: hidden;
+        font-size: clamp(14px, 4.1vw, 17px);
+        line-height: .95;
+        overflow-wrap: anywhere;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        padding: 9px 8px;
+        letter-spacing: .04em;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .brand img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .nav .btn {
+        width: auto;
+        min-height: 42px;
+        padding: 0 12px;
+        font-size: 12px;
+      }
+
+      .hero-actions,
+      .stats {
+        width: 100%;
+      }
+
+      .stat {
+        min-height: 88px;
+        padding: 16px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .slide-caption {
+        left: 16px;
+        right: 16px;
+        bottom: 78px;
+      }
+
+      .carousel-controls {
+        left: 16px;
+        right: auto;
+      }
+
+      .action-card {
+        height: clamp(245px, 70vw, 320px);
+        min-height: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegacao principal">
+      <a class="brand" href="#inicio" aria-label="Mestre Sandro">
+        <img src="assets/images/tuff-team-logo.png" alt="TUFF MUAI THAY BRAZILIAN TEAM">
+        <span>
+          <strong>Mestre Sandro</strong>
+          <span>TUFF MUAI THAY BRAZILIAN TEAM</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#treinos">Treinos</a>
+        <details class="nav-menu">
+          <summary>Modalidades</summary>
+          <div class="nav-menu-panel">
+            <a href="modalidades/muai-thay.html">Muai Thay</a>
+            <a href="modalidades/jiu-jitsu.html">Jiu Jitsu</a>
+            <a href="modalidades/hakipdo.html">Hakipdo</a>
+            <a href="modalidades/defesa-pessoal.html">Defesa Pessoal</a>
+            <a href="modalidades/mma.html">MMA</a>
+          </div>
+        </details>
+        <a href="mestre/index.html">O mestre</a>
+        <a href="mestre/galeria.html">Galeria</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/images/hero-site-antigo.png" alt="">
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Muay Thai, Jiu-Jitsu e MMA</div>
+          <h1>Mestre <span>Sandro</span></h1>
+          <p class="hero-text">Treinamento marcial com disciplina, intensidade e acompanhamento de mestre para quem quer evoluir de verdade, do primeiro treino a performance.</p>
+          <div class="hero-actions">
+            <a class="btn btn-red" href="contato/index.html">Aula experimental</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="action-section" id="treinos">
+      <div class="container">
+        <div class="action-head">
+          <h2>A filosofia do <span>Muai Thay</span></h2>
+          <p>A tecnica e a tradicao que formam alunos mais fortes dentro e fora do tatame.</p>
+        </div>
+        <div class="action-grid" aria-label="A filosofia do Muai Thay">
+          <article class="action-card">
+            <span class="action-tag">Tecnica</span>
+            <video src="assets/videos/treino-mestre-sandro-1.mp4" playsinline preload="metadata"></video>
+            <button class="play-mark" type="button" aria-label="Reproduzir video com som">&#9658;</button>
+            <div class="action-caption">
+              <strong>Veja a tecnica do Mestre em acao</strong>
+            </div>
+          </article>
+          <article class="action-card">
+            <span class="action-tag">Filosofia</span>
+            <video src="assets/videos/treino-mestre-sandro-2.mp4" playsinline preload="metadata"></video>
+            <button class="play-mark" type="button" aria-label="Reproduzir video com som">&#9658;</button>
+            <div class="action-caption">
+              <strong>A tradicao que forma campeoes</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="modalidades">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <div class="eyebrow">Modalidades</div>
+            <h2>Treino resumido, objetivo e <span>forte</span></h2>
+            <p>Uma pagina mais limpa, com as informacoes essenciais para o aluno entender a proposta e dar o primeiro passo.</p>
+          </div>
+        </div>
+        <div class="disciplines">
+          <a class="discipline" href="modalidades/muai-thay.html">
+            <span class="number">01 / Em pe</span>
+            <div>
+              <h3>Muai Thay</h3>
+              <p>Condicionamento, golpes, defesa, ritmo e postura para desenvolver seguranca em cada movimento.</p>
+            </div>
+          </a>
+          <a class="discipline" href="modalidades/jiu-jitsu.html">
+            <span class="number">02 / Chao</span>
+            <div>
+              <h3>Jiu Jitsu</h3>
+              <p>Controle, tecnica, alavancas e estrategia para evoluir com inteligencia dentro e fora do tatame.</p>
+            </div>
+          </a>
+          <a class="discipline" href="modalidades/hakipdo.html">
+            <span class="number">03 / Controle</span>
+            <div>
+              <h3>Hakipdo</h3>
+              <p>Defesa, equilibrio, disciplina e aplicacao tecnica para melhorar reflexo e confianca.</p>
+            </div>
+          </a>
+          <a class="discipline" href="modalidades/defesa-pessoal.html">
+            <span class="number">04 / Protecao</span>
+            <div>
+              <h3>Defesa Pessoal</h3>
+              <p>Treino pratico para postura, prevencao, reacao e seguranca em situacoes do dia a dia.</p>
+            </div>
+          </a>
+          <a class="discipline" href="modalidades/mma.html">
+            <span class="number">05 / Completo</span>
+            <div>
+              <h3>MMA</h3>
+              <p>Integracao das artes, preparacao fisica e mentalidade competitiva para alunos iniciantes e avancados.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule-section" id="estrutura">
+      <div class="container">
+        <div class="schedule-wrap">
+          <div class="schedule-brand">
+            <h2>Horarios das aulas</h2>
+          </div>
+
+          <div class="schedule-day">
+            <h3>Segunda e quarta</h3>
+            <table class="schedule-table" aria-label="Horarios de segunda e quarta">
+              <thead>
+                <tr>
+                  <th>Horario</th>
+                  <th>Modalidade</th>
+                  <th>Turma</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>16:15</td>
+                  <td>Muay Thai</td>
+                  <td>Personal</td>
+                </tr>
+                <tr>
+                  <td>19:00</td>
+                  <td>Muay Thai</td>
+                  <td>Adulto</td>
+                </tr>
+                <tr>
+                  <td>20:00</td>
+                  <td>Jiu-Jitsu</td>
+                  <td>Adulto</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="schedule-day">
+            <h3>Terca e quinta</h3>
+            <table class="schedule-table" aria-label="Horarios de terca e quinta">
+              <thead>
+                <tr>
+                  <th>Horario</th>
+                  <th>Modalidade</th>
+                  <th>Turma</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12:15</td>
+                  <td>Muay Thai</td>
+                  <td>Adulto</td>
+                </tr>
+                <tr>
+                  <td>16:10</td>
+                  <td>Jiu-Jitsu</td>
+                  <td>Kids</td>
+                </tr>
+                <tr>
+                  <td>17:10</td>
+                  <td>Jiu-Jitsu</td>
+                  <td>Kids</td>
+                </tr>
+                <tr>
+                  <td>18:00</td>
+                  <td>Hapkido</td>
+                  <td>Adulto</td>
+                </tr>
+                <tr>
+                  <td>19:00</td>
+                  <td>Muay Thai</td>
+                  <td>Adulto</td>
+                </tr>
+                <tr>
+                  <td>20:00</td>
+                  <td>Jiu-Jitsu</td>
+                  <td>Adulto</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="schedule-day">
+            <h3>Sexta</h3>
+            <table class="schedule-table" aria-label="Horarios de sexta">
+              <thead>
+                <tr>
+                  <th>Horario</th>
+                  <th>Modalidade</th>
+                  <th>Turma</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>21:00</td>
+                  <td>MMA</td>
+                  <td>Adulto</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="schedule-modalities">
+            <h3>Modalidades</h3>
+            <div class="modality-icons">
+              <a class="modality-pill" href="modalidades/muai-thay.html">Muay Thai</a>
+              <a class="modality-pill" href="modalidades/jiu-jitsu.html">Jiu-Jitsu</a>
+              <a class="modality-pill" href="modalidades/hakipdo.html">Hapkido</a>
+              <a class="modality-pill" href="modalidades/mma.html">MMA</a>
+            </div>
+            <p class="schedule-motto">Disciplina • Respeito • Foco • Evolucao</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="mestre">
+      <div class="container master">
+        <div class="section-title">
+          <div class="eyebrow">Por tras do nome</div>
+          <h2>Mestre <span>Sandro</span></h2>
+          <p>Uma presenca de lideranca para alunos que buscam tecnica, condicionamento e formacao dentro das artes marciais.</p>
+          <p class="quote">O treino certo constroi corpo, mente e carater. A evolucao vem da repeticao bem orientada.</p>
+          <div class="hero-actions" style="margin-top:28px">
+            <a class="btn btn-red" href="mestre/index.html">Ver pagina do mestre</a>
+            <a class="btn btn-outline" href="mestre/filosofia.html">Filosofia</a>
+          </div>
+        </div>
+        <div class="logo-block">
+          <img src="assets/images/tuff-team-logo.png" alt="Logo oficial TUFF MUAI THAY BRAZILIAN TEAM">
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contato">
+      <div class="container contact-inner">
+        <div>
+          <h2>Pronto para treinar?</h2>
+          <p>Solicite uma aula experimental e conheca de perto a metodologia do Mestre Sandro e da Tuff Team.</p>
+        </div>
+        <a class="btn btn-light" href="contato/index.html">Entrar em contato</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p><strong>Mestre Sandro</strong> / TUFF MUAI THAY BRAZILIAN TEAM</p>
+      <p>Site desenvolvido pela Sinkra One.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".action-card video").forEach((video) => {
+      const card = video.closest(".action-card");
+      const playButton = card.querySelector(".play-mark");
+
+      playButton.addEventListener("click", async () => {
+        video.muted = false;
+        video.controls = true;
+        try {
+          await video.play();
+          card.classList.add("is-playing");
+        } catch (error) {
+          card.classList.remove("is-playing");
+        }
+      });
+
+      video.addEventListener("ended", () => {
+        video.controls = false;
+        video.currentTime = 0;
+        card.classList.remove("is-playing");
+      });
+    });
+  </script>
+</body>
+</html>
